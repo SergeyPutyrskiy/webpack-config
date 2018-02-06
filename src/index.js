@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './styles.css';
 
-console.log('index.js module');
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
