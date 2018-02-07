@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
+import image  from './images/image.jpeg';
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Hello, world! <img src={image}/></h1>,
   document.getElementById('root')
 );
