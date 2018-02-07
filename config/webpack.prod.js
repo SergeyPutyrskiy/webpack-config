@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.config.js');
 const path = require('path');
@@ -5,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = merge(commonConfig, {
+    entry: {
+        vendor: ['react', 'react-dom']
+    },
     output: {      
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, '../dist')
@@ -34,6 +38,10 @@ module.exports = merge(commonConfig, {
             filename: 'styles.css',
             disable: false,
             allChunks: true
-        })
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+      })
     ]
 });
