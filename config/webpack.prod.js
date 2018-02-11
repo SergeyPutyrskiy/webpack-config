@@ -3,6 +3,7 @@ const commonConfig = require('./webpack.config.js');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = merge(commonConfig, {
     output: {      
@@ -34,6 +35,14 @@ module.exports = merge(commonConfig, {
             filename: 'styles.css',
             disable: false,
             allChunks: true
+        }),
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                compress: true,
+                comments: false,
+                beautify: false,
+                warnings: false
+            }
         })
     ]
 });

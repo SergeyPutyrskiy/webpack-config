@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.css';
+import Title from 'Title/Title';
+
+import './styles';
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <Title/>,
   document.getElementById('root')
 );

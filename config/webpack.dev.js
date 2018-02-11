@@ -14,6 +14,7 @@ module.exports = merge(commonConfig, {
         port: 3001,
         stats: 'errors-only'
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
